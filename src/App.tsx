@@ -1,25 +1,29 @@
 import React from 'react';
-import logo from './logo.svg';
-import './App.css';
+import {BrowserRouter as Router, Routes, Route} from "react-router-dom"
+import { useQuery } from 'react-query';
 
-function App() {
+import Navbar from './components/Navbar';
+import Footer from './components/Footer'
+import Landing from './pages/landing';
+import Account from './pages/Account';
+import Create from './pages/Create';
+import Cart from './pages/Cart';
+import './css/App.css';
+
+const App = () => {
+
+
   return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.tsx</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
-    </div>
+    <Router>
+      <Navbar/>
+      <Routes>
+        <Route path="/" element={<Landing/>}/>
+        <Route path="/create-new" element={<Create/>}/>
+        <Route path="/account" element={<Account/>}/>
+        <Route path="/my-cart" element={<Cart/>}/>
+      </Routes>
+      <Footer/>
+    </Router>
   );
 }
 
