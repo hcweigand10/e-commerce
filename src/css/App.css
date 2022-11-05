@@ -1,10 +1,67 @@
 @import '~antd/dist/antd.css';
 
+:root {
+  --primary: blue;
+  --accent: pink;
+  --lightgray: rgb(222, 222, 222);
+}
+
+#root {
+  margin-top: 52px;
+}
+
+/* NAVBAR */
+
+#sticky-nav {
+  height: 52px;
+  width: 100vw;
+  position: fixed;
+  top: 0;
+  background-color: white;
+}
+
+.nav-item {
+  display: inline;
+}
+
+.nav-link-item {
+  margin-right: 10px;
+  border-bottom: 1px solid white;
+  pointer-events: none;
+  
+}
+
+/* .nav-link-item:hover {
+  color: var(--primary);
+  border-bottom: 1px solid var(--primary);
+} */
+
+.nav-link {
+  color: black;
+  padding: 7px;
+  border-radius: 8%;
+  pointer-events: auto;
+}
+
+.nav-link:hover {
+  background-color: lightgray;
+  color: black;
+}
+
+.btn-signout {
+  background-color: red;
+  border: none;
+}
+
+.btn-signout:hover {
+  background-color: rgb(191, 0, 0);
+}
+
 .menuBar {
   padding: 0 20px;
   border-bottom: solid 1px #e8e8e8;
   overflow: auto;
-  box-shadow: 0 0 30px #f3f1f1;
+  box-shadow: 0 0 10px #f3f1f1;
   display: flex;
   align-items: center;
 }
@@ -55,7 +112,7 @@
   float: right;
   height: 32px;
   padding: 6px;
-  margin-top: 8px;
+  margin-top: 0px;
   display: none;
   background: none;
 }
@@ -128,4 +185,26 @@
   .logo a {
     padding: 10px 20px;
   }
+}
+
+/* NAVBAR END */
+
+/* LANDING PAGE */
+#landing {
+  min-height: calc(100vh - 52px);
+  color: white !important;
+}
+
+#background-map {
+  z-index: -5;
+  height: calc(100vh - 52px);
+  width: 100%;
+  position: absolute;
+  object-fit: cover;
+  filter: blur(6px);
+}
+
+#title {
+  text-align: center;
+  padding-top: 30px;
 }

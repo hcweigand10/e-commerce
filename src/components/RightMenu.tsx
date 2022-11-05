@@ -1,27 +1,33 @@
-import React, { useState } from "react";
+import React, { useContext } from "react";
 import { Link } from "react-router-dom";
-import { Menu } from "antd";
-
-const styles = {
-    ulRow: {
-        listStyleType: "none",
-        marginBottom: "0",
-    },
-    liRow: {
-        display: "inline",
-        padding: "0 10px"
-    }
-}
+// import { Menu, Button } from "antd";
+import userContext from "../contexts/userContext";
+import GoogleAuth from "./GoogleAuth";
 
 const RightMenu = () => {
+    const { userInfo } = useContext(userContext);
+
     return (
-        <ul style={styles.ulRow}>
-            <li key="mail" style={styles.liRow}>
-                <Link to="/sign">Signin</Link>
-            </li>
-            <li key="app" style={styles.liRow}>
-                <Link to="">Signup</Link>
-            </li>
+        <ul style={{ listStyleType: "none", marginBottom: "0", display: "flex", padding: "0"}}>
+            {userInfo.name ? (
+                <>
+                    <li className="nav-item nav-link-item">
+                        <p style={{marginBottom: 0, fontStyle: "italic", color: "gray", marginRight: "15px"}}>Hi there, {userInfo.name.split(" ")[0]}!</p>
+                    </li>
+                    <li className="nav-item nav-link-item">
+                        <Link className="nav-link" to="/account">
+                            My Account
+                        </Link>
+                    </li>
+                    <li className="nav-item nav-link-item">
+                        <Link className="nav-link" to="/my-cart">
+                            Cart
+                        </Link>
+                    </li>
+                </>
+            ) : (
+                <GoogleAuth />
+            )}
         </ul>
     );
 };
