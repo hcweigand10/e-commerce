@@ -18,6 +18,8 @@ const GoogleAuth = () => {
         setUserInfo({email: userInfoResponse.data.email, name: userInfoResponse.data.name})
     };
 
+    console.log(process.env.REACT_APP_CLIENT_ID)
+
     const error = () => {
         console.log("google error");
     };
