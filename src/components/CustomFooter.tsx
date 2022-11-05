@@ -1,4 +1,4 @@
-import React, {useState} from 'react'
+// import React, {useState} from 'react'
 import { Footer } from 'antd/lib/layout/layout'
 
 const CustomFooter = () => {
