@@ -15,7 +15,7 @@ const GoogleAuth = () => {
         const token = response.credential
         const userInfoResponse = await api.getGoogleInfo(token)
         console.log(userInfoResponse)
-        setUserInfo({email: userInfoResponse.data.email, name: userInfoResponse.data.name})
+        setUserInfo({email: userInfoResponse.data.email, name: userInfoResponse.data.name, pic: userInfoResponse.data.picture})
     };
 
     console.log(process.env.REACT_APP_CLIENT_ID)

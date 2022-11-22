@@ -1,8 +1,12 @@
-import React, { useState, } from "react";
+import React, { useState } from "react";
 import { BrowserRouter as Router, Routes, Route } from "react-router-dom";
 // import { useQuery } from "react-query";
 
 // import api from "./utils/api";
+import {
+    Experimental_CssVarsProvider as CssVarsProvider,
+    experimental_extendTheme as extendTheme,
+} from "@mui/material/styles";
 import UserContext from "./contexts/userContext";
 import Navbar from "./components/Navbar";
 import Footer from "./components/CustomFooter";
@@ -11,13 +15,31 @@ import Account from "./pages/Account";
 import Create from "./pages/Create";
 import Cart from "./pages/Cart";
 import NotFound from "./pages/NotFound";
+import { userInfo, cart } from "./interfaces/userInfo";
 import "./css/App.css";
 
+const theme = extendTheme({
+    colorSchemes: {
+        light: {
+            palette: {
+                primary: {
+                    main: "#EEA47F"
+                },
+                secondary: {
+                    main: "#FFFFFFF"
+                }
+            }
+        }
+    }
+});
+
 const App = () => {
-    const [userInfo, setUserInfo] = useState<{
-        email: string | null;
-        name: string | null;
-    }>({ email: null, name: null });
+    const [userInfo, setUserInfo] = useState<userInfo>({
+        email: null,
+        name: null,
+        pic: null,
+    });
+    const [cart, setCart] = useState<cart>([{ id: 3 }]);
     // const [signedIn, setSignedIn] = useState(null);
     // const [auth, setAuth] = useState(null);
 
@@ -63,19 +85,23 @@ const App = () => {
     // const login = (): void => {};
 
     return (
-        <Router>
-            <UserContext.Provider value={{ userInfo, setUserInfo }}>
-                <Navbar />
-                <Routes>
-                    <Route path="/" element={<Landing />} />
-                    <Route path="/create" element={<Create />} />
-                    <Route path="/account" element={<Account />} />
-                    <Route path="/my-cart" element={<Cart />} />
-                    <Route path="*" element={<NotFound />} />
-                </Routes>
-            </UserContext.Provider>
-            <Footer />
-        </Router>
+        <CssVarsProvider theme={theme}>
+            <Router>
+                <UserContext.Provider
+                    value={{ userInfo, setUserInfo, cart, setCart }}
+                >
+                    <Navbar />
+                    <Routes>
+                        <Route path="/" element={<Landing />} />
+                        <Route path="/create" element={<Create />} />
+                        <Route path="/account" element={<Account />} />
+                        <Route path="/my-cart" element={<Cart />} />
+                        <Route path="*" element={<NotFound />} />
+                    </Routes>
+                </UserContext.Provider>
+                <Footer />
+            </Router>
+        </CssVarsProvider>
     );
 };
 

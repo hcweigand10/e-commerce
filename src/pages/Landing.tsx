@@ -1,11 +1,16 @@
 // import React, {useState} from 'react'
 
+import GetStarted from "../components/landingSections/GetStarted"
+import Hero from "../components/landingSections/LandingHero"
+import HowItWorks from "../components/landingSections/HowItWorks"
+
 const Landing = () => {
 
     return (
         <div id='landing'>
-             <img id="background-map" src='https://starkaerospace.com/wp-content/uploads/2014/06/background-world-map-1.gif' alt='world map'/>
-             <h1 id='title'>Title</h1>
+             <Hero/>
+             <HowItWorks/>
+             <GetStarted/>
         </div>
     )
 }

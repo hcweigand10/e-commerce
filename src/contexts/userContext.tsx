@@ -1,18 +1,13 @@
 import React from "react";
+import {userContext} from "../interfaces/userInfo"
 
-export default React.createContext<{
-    userInfo: {
-        email: string | null,
-        name: string | null,
-    }
-    setUserInfo: React.Dispatch<React.SetStateAction<{
-        email: string | null,
-        name: string | null
-    }>>
-}>({
+export default React.createContext<userContext>({
     userInfo: {
         email: null,
         name: null,
+        pic: null
     },
-    setUserInfo: () => {}
+    setUserInfo: () => {},
+    cart: [],
+    setCart: () => {}
 });

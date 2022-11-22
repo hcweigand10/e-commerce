@@ -1,190 +1,93 @@
 @import '~antd/dist/antd.css';
 
 :root {
-  --primary: blue;
+  --primary: #EEA47FFF;
   --accent: pink;
+  --white: white;
+  --black: black;
   --lightgray: rgb(222, 222, 222);
+  --navbarHeight: 68px
 }
 
 #root {
-  margin-top: 52px;
+  margin-top: var(--navbarHeight);
+  
 }
 
 /* NAVBAR */
 
 #sticky-nav {
-  height: 52px;
+  height: var(--navbarHeight);
   width: 100vw;
   position: fixed;
   top: 0;
-  background-color: white;
+  background-color: var(--white);
+  color: var(--black);
 }
 
 .nav-item {
-  display: inline;
+  height: 100%;
+  padding-left: 12px;
 }
-
-.nav-link-item {
-  margin-right: 10px;
-  border-bottom: 1px solid white;
-  pointer-events: none;
-  
-}
-
-/* .nav-link-item:hover {
-  color: var(--primary);
-  border-bottom: 1px solid var(--primary);
-} */
 
 .nav-link {
-  color: black;
-  padding: 7px;
-  border-radius: 8%;
-  pointer-events: auto;
+  font-size: 15px;
+  color: var(--black);
+  height: 100%;
+  display: flex;
+  align-items: center;
+  border-top: 2px solid white;
+  border-bottom: 2px solid white;
 }
 
 .nav-link:hover {
-  background-color: lightgray;
-  color: black;
+  color: var(--black);
+  border-top: 2px solid white;
+  border-bottom: 2px solid var(--primary);
 }
 
-.btn-signout {
-  background-color: red;
-  border: none;
-}
-
-.btn-signout:hover {
-  background-color: rgb(191, 0, 0);
-}
-
-.menuBar {
-  padding: 0 20px;
-  border-bottom: solid 1px #e8e8e8;
-  overflow: auto;
-  box-shadow: 0 0 10px #f3f1f1;
+.nav-link-active {
+  font-size: 15px;
+  color: var(--primary);
+  height: 100%;
   display: flex;
   align-items: center;
+  border-top: 2px solid white;
+  border-bottom: 2px solid var(--primary);
 }
 
-.logo {
-  width: 150px;
-  float: left;
+.nav-link-active:hover {
+  color: var(--primary);
+  border-top: 2px solid white;
+  border-bottom: 2px solid var(--primary);
 }
 
-.logo a {
-  display: inline-block;
-  font-size: 20px;
-  padding: 10px 20px;
-  text-transform: capitalize;
+#nav-container {
+  height: var(--navbarHeight);
 }
 
-.menuCon {
-  width: calc(100% - 150px);
-  float: left;
+.logo:hover {
+  color: black;
+  border-bottom: 2px solid var(--primary);
 }
 
-.menuCon .ant-menu-item {
-  padding: 0px 5px;
+#profile-box {
+  height: var(--navbarHeight);
 }
 
-.menuCon .ant-menu-submenu-title {
-  padding: 10px 20px;
+#profile-btn {
+  height: 100%;
+  color: black;
+  text-transform: none;
+  border-radius: 0;
+  border-bottom: 2px solid var(--white);
+  border-top: 2px solid var(--white);
 }
 
-.menuCon .ant-menu-item a,
-.menuCon .ant-menu-submenu-title a {
-  padding: 10px 15px;
-}
-
-.menuCon .ant-menu-horizontal {
-  border-bottom: none;
-}
-
-.menuCon .leftMenu {
-  float: left;
-}
-
-.menuCon .rightMenu {
-  float: right;
-}
-
-.barsMenu {
-  float: right;
-  height: 32px;
-  padding: 6px;
-  margin-top: 0px;
-  display: none;
-  background: none;
-}
-
-.barsBtn {
-  display: block;
-  width: 20px;
-  height: 2px;
-  background: #1890ff;
-  position: relative;
-}
-
-.barsBtn:after,
-.barsBtn:before {
-  content: attr(x);
-  width: 20px;
-  position: absolute;
-  top: -6px;
-  left: 0;
-  height: 2px;
-  background: #1890ff;
-}
-
-.barsBtn:after {
-  top: auto;
-  bottom: -6px;
-}
-
-.ant-drawer-body {
-  padding: 0;
-}
-
-.barsMenu>span {
-  display: block;
-}
-
-.ant-drawer-body .ant-menu-horizontal>.ant-menu-item,
-.ant-drawer-body .ant-menu-horizontal>.ant-menu-submenu {
-  display: inline-block;
-  width: 100%;
-}
-
-.ant-drawer-body .ant-menu-horizontal {
-  border-bottom: none;
-}
-
-.ant-drawer-body .ant-menu-horizontal>.ant-menu-item:hover {
-  border-bottom-color: transparent;
-}
-
-@media (max-width: 767px) {
-  .barsMenu {
-    display: inline-block;
-  }
-
-  .leftMenu,
-  .rightMenu {
-    display: none;
-  }
-
-  .logo a {
-    margin-left: -20px;
-  }
-
-  .menuCon .ant-menu-item,
-  .menuCon .ant-menu-submenu-title {
-    padding: 1px 20px;
-  }
-
-  .logo a {
-    padding: 10px 20px;
-  }
+#profile-btn:hover {
+  background-color: var(--white);
+  border-bottom: 2px solid var(--primary);
+  border-top: 2px solid var(--white);
 }
 
 /* NAVBAR END */
