@@ -1,6 +1,6 @@
 // import React, {useState} from 'react'
 
-import GetStarted from "../components/landingSections/GetStarted"
+import GetStarted from "../components/landingSections/Examples"
 import Hero from "../components/landingSections/LandingHero"
 import HowItWorks from "../components/landingSections/HowItWorks"
 

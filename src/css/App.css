@@ -1,17 +1,23 @@
 @import '~antd/dist/antd.css';
+@import '@fontsource/roboto/300.css';
+@import '@fontsource/roboto/400.css';
+@import '@fontsource/roboto/500.css';
+@import '@fontsource/roboto/700.css';
 
 :root {
   --primary: #EEA47FFF;
   --accent: pink;
   --white: white;
   --black: black;
+  --backgroundprimary: rgb(252, 233, 225);
+  --lightbg: rgba(255, 255, 255, 0.838);
   --lightgray: rgb(222, 222, 222);
-  --navbarHeight: 68px
+  --navbarHeight: 64px
 }
 
 #root {
   margin-top: var(--navbarHeight);
-  
+  font-family: Roboto;
 }
 
 /* NAVBAR */
@@ -23,6 +29,7 @@
   top: 0;
   background-color: var(--white);
   color: var(--black);
+  box-shadow: none;
 }
 
 .nav-item {
@@ -36,13 +43,13 @@
   height: 100%;
   display: flex;
   align-items: center;
-  border-top: 2px solid white;
-  border-bottom: 2px solid white;
+  border-top: 2px solid var(--white);
+  border-bottom: 2px solid var(--white);
 }
 
 .nav-link:hover {
   color: var(--black);
-  border-top: 2px solid white;
+  border-top: 2px solid var(--white);
   border-bottom: 2px solid var(--primary);
 }
 
@@ -52,13 +59,13 @@
   height: 100%;
   display: flex;
   align-items: center;
-  border-top: 2px solid white;
+  border-top: 2px solid var(--white);
   border-bottom: 2px solid var(--primary);
 }
 
 .nav-link-active:hover {
   color: var(--primary);
-  border-top: 2px solid white;
+  border-top: 2px solid var(--white);
   border-bottom: 2px solid var(--primary);
 }
 
@@ -66,10 +73,13 @@
   height: var(--navbarHeight);
 }
 
+.logo {
+  padding: 0 !important;
+}
+
 .logo:hover {
   color: black;
-  border-bottom: 2px solid var(--primary);
-}
+} 
 
 #profile-box {
   height: var(--navbarHeight);
@@ -93,21 +103,21 @@
 /* NAVBAR END */
 
 /* LANDING PAGE */
-#landing {
-  min-height: calc(100vh - 52px);
-  color: white !important;
-}
-
-#background-map {
-  z-index: -5;
-  height: calc(100vh - 52px);
-  width: 100%;
-  position: absolute;
-  object-fit: cover;
-  filter: blur(6px);
+.bg-primary {
+  background-color: var(--backgroundprimary);
 }
 
 #title {
   text-align: center;
   padding-top: 30px;
+}
+
+#primary-btn {
+  background-color: var(--primary);
+  color: var(--white);
+}
+
+.example-pic {
+  width: 100%;
+  padding: 20px;
 }

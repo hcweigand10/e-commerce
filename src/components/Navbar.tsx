@@ -71,8 +71,6 @@ function ResponsiveAppBar() {
                         noWrap
                         sx={{
                             mr: 2,
-                            borderTop: "2px solid white",
-                            borderBottom: "2px solid white",
                             height: "100%",
                             paddingTop: "16px",
                             paddingBottom: "16px",
