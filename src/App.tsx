@@ -93,7 +93,7 @@ const App = () => {
                     <Navbar />
                     <Routes>
                         <Route path="/" element={<Landing />} />
-                        <Route path="/create" element={<GetStarted />} />
+                        <Route path="/get-started" element={<GetStarted />} />
                         <Route path="/account" element={<Account />} />
                         <Route path="/my-cart" element={<Cart />} />
                         <Route path="*" element={<NotFound />} />
