@@ -17,7 +17,6 @@ import Cart from "./pages/Cart";
 import NotFound from "./pages/NotFound";
 import { userInfo, cart } from "./interfaces/userInfo";
 import "./css/App.css";
-import GetStarted from "./pages/GetStarted";
 
 const theme = extendTheme({
     colorSchemes: {
