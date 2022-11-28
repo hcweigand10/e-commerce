@@ -1,12 +1,12 @@
 // import React, {useState} from 'react'
 
-const Create = () => {
+const GetStarted = () => {
 
     return (
         <div>
-             <h3>Create</h3>
+             <h3>GetStarted</h3>
         </div>
     )
 }
 
-export default Create
+export default GetStarted

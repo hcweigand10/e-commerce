@@ -12,11 +12,12 @@ import Navbar from "./components/Navbar";
 import Footer from "./components/CustomFooter";
 import Landing from "./pages/Landing";
 import Account from "./pages/Account";
-import Create from "./pages/Create";
+import GetStarted from "./pages/GetStarted";
 import Cart from "./pages/Cart";
 import NotFound from "./pages/NotFound";
 import { userInfo, cart } from "./interfaces/userInfo";
 import "./css/App.css";
+import GetStarted from "./pages/GetStarted";
 
 const theme = extendTheme({
     colorSchemes: {
@@ -93,7 +94,7 @@ const App = () => {
                     <Navbar />
                     <Routes>
                         <Route path="/" element={<Landing />} />
-                        <Route path="/create" element={<Create />} />
+                        <Route path="/create" element={<GetStarted />} />
                         <Route path="/account" element={<Account />} />
                         <Route path="/my-cart" element={<Cart />} />
                         <Route path="*" element={<NotFound />} />
