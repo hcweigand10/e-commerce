@@ -16,7 +16,7 @@ import {
 const Examples = () => {
 
     return (
-        <Box className="bg-primary" sx={{paddingTop: "30px", paddingBottom: "30px"}}>
+        <Box className="bg-primary" sx={{padding: "0 30px"}}>
             <Container maxWidth="lg">
             <Typography variant="h2" fontSize={32} sx={{width: "100%", textAlign: "center"}}>Examples</Typography>
                 <Container sx={{display: "flex", justifyContent: "center"}}>

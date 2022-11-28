@@ -19,6 +19,8 @@ import userContext from "../contexts/userContext";
 import GoogleAuth from "./GoogleAuth";
 import { Link, NavLink } from "react-router-dom";
 import helpers from "../utils/helpers";
+import { Badge } from "antd";
+import {ShoppingCartOutlined} from "@ant-design/icons"
 
 const pages = ["Home", "Get Started"];
 const settings = ["Account"];
@@ -26,9 +28,6 @@ const settings = ["Account"];
 function ResponsiveAppBar() {
     const [anchorElNav, setAnchorElNav] = useState<null | HTMLElement>(null);
     const [anchorElUser, setAnchorElUser] = useState<null | HTMLElement>(null);
-    const [activePage, setActivePage] = useState<string>(
-        window.location.pathname || "Home"
-    );
 
     const { userInfo, cart } = useContext(userContext);
 
@@ -200,7 +199,7 @@ function ResponsiveAppBar() {
                                     color: "gray"
                                 }}
                             >
-                                Hi there, {userInfo.name.split(" ")[0]}!
+                                Hi {userInfo.name.split(" ")[0]}!
                             </Typography>
                             <Tooltip title="Open settings">
                                 <Button
@@ -239,12 +238,18 @@ function ResponsiveAppBar() {
                                         key={setting}
                                         onClick={handleCloseUserMenu}
                                     >
-                                        <Typography textAlign="center">
+                                        <Link to={`/${setting.toLowerCase()}`}>
                                             {setting}
-                                        </Typography>
+                                        </Link>
                                     </MenuItem>
                                 ))}
                             </Menu>
+                            <Link className="nav-link" to="/my-cart">
+                            <Badge count={cart.length} size="small">
+                            <ShoppingCartOutlined style={{fontSize: "24px", marginBottom: "0px"}}/>
+
+                            </Badge>
+                        </Link>
                         </Box>
                     ) : (
                         <GoogleAuth />

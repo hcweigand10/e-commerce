@@ -29,7 +29,8 @@
   top: 0;
   background-color: var(--white);
   color: var(--black);
-  box-shadow: none;
+  box-shadow: 0 1px 6px gray;
+  z-index: 10;
 }
 
 .nav-item {
